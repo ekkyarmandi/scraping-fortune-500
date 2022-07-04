@@ -87,9 +87,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     ## iterate the process through years
-    data = []
-    from_year = args.from_year
-    to_year = args.to_year
+    from_year,to_year = args.from_year,args.to_year
     msg = f"Scraping Fortune 500 Company Data from {from_year} to {to_year}"
     data = [get_500(year) for year in tqdm(range(from_year,to_year+1), msg)]
 
